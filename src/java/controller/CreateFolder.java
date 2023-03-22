@@ -93,7 +93,14 @@ public class CreateFolder extends HttpServlet {
             System.out.println(e);
             
         }
-
+        
+        int studySetId = 0;
+        try {
+            studySetId = Integer.parseInt(request.getParameter("studySetId"));
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+ 
         String title = request.getParameter("title");
         String details = request.getParameter("details");
         HttpSession ses = request.getSession();
@@ -104,11 +111,16 @@ public class CreateFolder extends HttpServlet {
         
         
          if (classId != 0) {
-                      ListClass ListCl = new ListClass(classId, dao.getIdFolder(), 10);
-                    dao.createListFolderInClass(ListCl);
-                    response.sendRedirect("classSet?id="+classId);
-                    ses.setAttribute("classId", "");
-                }
+            ListClass ListCl = new ListClass(classId, dao.getIdFolder(), 10);
+            dao.createListFolderInClass(ListCl);
+            response.sendRedirect("classSet?id="+classId);
+            ses.setAttribute("classId", "");
+        }
+         int folderId = dao.getIdFolder();
+         if(studySetId != 0) {
+             dao.addStudySetInFolder(folderId, studySetId);
+             response.sendRedirect("flashCards?id=" + studySetId);
+         }
          doGet(request, response);
          
     }

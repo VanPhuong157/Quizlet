@@ -135,6 +135,7 @@ body {
 .dropdown-item:hover {
     background: #282e3e;
     color: white !important;
+    cursor: pointer;
 }
 
 .show {
@@ -153,6 +154,7 @@ body {
     font-weight: 600;
     margin-right: 20px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .modal {
@@ -449,20 +451,23 @@ body {
     padding-left: 10px;
 }
 
+.school-na {
+    margin-top: 20px;
+}
+
 .create-button-cl{
-    background-color: #586380;
-    font-size: 14px;
+    background-color: #4255ff !important;
+    font-size: 18px;
     color: white;
     margin-top: 50px;
-    padding: 8px 16px;
+    padding: 16px 32px;
     border-radius: 6px;
     border:0px ;
+    font-weight: 600;
 }
 
 .create-button-cl:hover{
-    background: #282e3e;
-    border-radius: 12px;
-    color: white !important;
+    opacity: .9;
     cursor: pointer;
 }
 .book-title-lib{

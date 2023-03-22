@@ -110,6 +110,7 @@ public class CreateClass extends HttpServlet {
         dao.createClass(c);
         if(ssId != 0) {
             dao.addStudySetInClass(dao.getIdClass(), ssId);
+            response.sendRedirect("classSet?id=" + dao.getIdClass());
         }
         doGet(request, response);
     }

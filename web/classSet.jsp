@@ -25,11 +25,10 @@
             <div class="control-classSet">
                 <div class="classSet-info">
                     <div class="icon-class">
-                        <i class="fa-solid fa-user-group"></i>
+                        <span class="class-author-avt"><%= user.getName().charAt(0)%></span>
                     </div>
                     <div class="class-author">
-                        <p style ="margin-top: 0px;">${c.getName()}</p>
-
+                        ${c.getName()}
                     </div>
                 </div>
 
@@ -272,7 +271,7 @@
                                         <div class="contai-home">
                                             <div class="class-contai">
                                                 <div class="cate-class">
-                                                    <span class="title-container-class" id="items1" onclick="handleOpenStudySetFolder()">Các học phần</span>
+                                                    <span class="title-container-class active-border" id="items1" onclick="handleOpenStudySetFolder()">Các học phần</span>
                                                     <span class="title-container-class" id="items2" onclick="handleOpenMember()">Thành viên</span>
                                                 </div>
                                             </div>
@@ -357,12 +356,12 @@
                                                                         <span class="user-avatar-sub2"><%= user.getName().charAt(0)%></span>
                                                                         ${m.getName()}
                                                                     </div>
-                                                                                        <c:if test="${userId == c.getUserId()}">
+                                                                    <c:if test="${userId == c.getUserId()}">
 
-                                                                    <div class="delete-member method-item">
-                                                                        <i class="fa-regular fa-trash-can" onClick ="handleOpenModalDelD()"></i>
-                                                                    </div>
-                                                                                        </c:if>
+                                                                        <div class="delete-member method-item">
+                                                                            <i class="fa-regular fa-trash-can" onClick ="handleOpenModalDelD()"></i>
+                                                                        </div>
+                                                                    </c:if>
                                                                     <div id="myModalD" class="modal">
                                                                         <div class="contentdel">
                                                                             <div class="modalDel-content">
@@ -383,7 +382,7 @@
                                                                                     <div class="btn-cancel" onClick="handleCloseModalDelD()">Hủy</div>
                                                                                     <form action="deleteMember" method="POST">
                                                                                         <input name="classId" value="${classId}" class="input-send"/>
-                                                                                          <input name="memberId" value="${m.getId()}" class="input-send"/>
+                                                                                        <input name="memberId" value="${m.getId()}" class="input-send"/>
                                                                                         <button type="submit" class="btn-del">
                                                                                             Vâng,hãy xóa thành viên
                                                                                     </form>
@@ -451,6 +450,7 @@
                                             var modal5 = document.getElementById("myModal5");
                                             var modalF = document.getElementById("myModalF");
                                             var modalD = document.getElementById("myModalD");
+                                            var typeContainer = document.getElementsByClassName("title-container-class");
 
 
 
@@ -474,11 +474,15 @@
                                             function handleOpenStudySetFolder() {
                                                 modalShow1.style.display = "block";
                                                 modalShow2.style.display = "none";
+                                                typeContainer[0].classList.add("active-border");
+                                                typeContainer[1].classList.remove("active-border");
                                             }
 
                                             function handleOpenMember() {
                                                 modalShow1.style.display = "none";
                                                 modalShow2.style.display = "block";
+                                                typeContainer[1].classList.add("active-border");
+                                                typeContainer[0].classList.remove("active-border");
                                             }
 
 

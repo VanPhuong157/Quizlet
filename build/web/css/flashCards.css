@@ -543,16 +543,29 @@ a {
     border-radius: 6px;
     cursor: pointer;
     margin: 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
 .item-study-set1:hover{
     background-color: #303545;
 }
 
 .fa-minus, .add-icon {
-    float: right;
     border-radius: 5px;
     padding: 10px 20px;
     background-color: #2E3856;
+    color: #939bb4;
+    font-size: 18px;
+}
+
+.item-study-set1:hover ~ .fa-minus {
+    background-color: #303545;
+}
+
+.item-study-set1:hover ~ .add-icon {
+    background-color: #303545;
 }
 
 .fa-folder-minus {

@@ -127,18 +127,18 @@
                     <div id="myModalNewClass" class="modal">
                         <div class="modal-content">
                             <span class="close" onClick="handleCloseNewClass()">×</span>
-                            <h1 style="color: black">Tạo lớp mới</h1>
+                            <h1 style="color: white">Tạo lớp mới</h1>
                             <p>Sắp xếp tài liệu học của bạn và chia sẻ chúng với bạn học của bạn.</p>
                             <form action="class" method="post">
                                 <input type="hidden" name="studySetId" value="${id}"/>
-                                <input  class="classname" type="text" name="classname" placeholder="Nhập tên lớp (khóa học, giáo viên, năm nay, phần vv)"></br>
-                                <input class="details" type="text" name="detailsclass" placeholder="Nhập mô tả(tùy chọn)">
+                                <input  class="class-na" type="text" name="classname" placeholder="Nhập tên lớp (khóa học, giáo viên, năm nay, phần vv)"></br>
+                                <input class="details-cl" type="text" name="detailsclass" placeholder="Nhập mô tả(tùy chọn)">
                                 <input class="accept" type="checkbox" name="adddel" value="True"/>cho phép các thành viên trong lớp thêm và bỏ học phần</br> </br> 
                                 <input class="accept" type="checkbox" name="addpeople" value="True"/>cho phép các thành viên trong lớp mời thành viên mới </br>
-                                <input  class="schoolname" type="text" name="schoolname" placeholder="Nhập tên trường của bạn"></br>
+                                <input  class="school-na" type="text" name="schoolname" placeholder="Nhập tên trường của bạn"></br>
 
                                 <div class="button-folder">
-                                    <input type="submit" value="Tạo lớp" class="create-button"/>
+                                    <input type="submit" value="Tạo lớp" class="create-button-cl"/>
                                 </div>
                             </form>
                         </div>
@@ -164,7 +164,11 @@
                                         <span > 
                                             <div class="item-study-set1">
                                                 <div class="title-study-set1">
-                                                    ${c.getName()}
+                                                    <a href="classSet?id=${c.getId()}">
+                                                        ${c.getName()}
+                                                    </a>
+                                                </div>
+                                                <div class="control-class">
                                                     <c:set var="checkAdded" scope="request" value="${d.isAddedInClass(c.getId(),id)}" />
                                                     <c:if test="${checkAdded}">
                                                         <i class="fa-solid fa-minus" onclick="sendMethod2(${id}, ${c.getId()}, 'delete')"></i>
@@ -182,7 +186,11 @@
                                         <span > 
                                             <div class="item-study-set1">
                                                 <div class="title-study-set1">
-                                                    ${s.getTitle()} 
+                                                    <a href="folderSet?id=${s.getId()}">
+                                                        ${s.getTitle()}
+                                                    </a>
+                                                </div>
+                                                <div class="control-class">
                                                     <c:set var="checkAdded" scope="request" value="${d.isAddedInFolder(s.getId(),id)}" />
                                                     <c:if test="${checkAdded}">
                                                         <i class="fa-solid fa-minus" onclick="sendMethod(${id}, ${s.getId()}, 'delete')"></i>

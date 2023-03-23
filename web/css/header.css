@@ -213,6 +213,7 @@ body {
         0 16px 16px rgba(0,0,0,0.12);
     outline: none;
     text-align: start !important;
+    
 }
 
 .close {
@@ -451,10 +452,6 @@ body {
     padding-left: 10px;
 }
 
-.school-na {
-    margin-top: 20px;
-}
-
 .create-button-cl{
     background-color: #4255ff !important;
     font-size: 18px;
@@ -491,4 +488,8 @@ body {
 }
 .book-item-lib:hover{
     background-color: #2e3856;
+}
+
+.accept {
+    display: none;
 }

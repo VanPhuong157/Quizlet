@@ -159,8 +159,8 @@
                                         <form action="class" method="post">
                                             <input  class="class-na" type="text" name="classname" placeholder="Nhập tên lớp (khóa học, giáo viên, năm nay, phần vv)"></br>
                                             <input class="details-cl" type="text" name="detailsclass" placeholder="Nhập mô tả(tùy chọn)">
-                                            <input class="accept" type="checkbox" name="adddel" value="True"/>cho phép các thành viên trong lớp thêm và bỏ học phần</br> </br> 
-                                            <input class="accept" type="checkbox" name="addpeople" value="True"/>cho phép các thành viên trong lớp mời thành viên mới </br>
+                                            <input class="accept" type="checkbox" name="adddel" value="True" style="display: none"/> 
+                                            <input class="accept" type="checkbox" name="addpeople" value="True" style="display: none"/>
                                             <input  class="school-na" type="text" name="schoolname" placeholder="Nhập tên trường của bạn"></br>
 
                                             <div class="button-folder">
